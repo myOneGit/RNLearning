@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
-import {View, Text, Button, Alert,TouchableOpacity} from 'react-native';
+import {View, Text, Button, Alert} from 'react-native';
 
 export default class Home extends Component <Props> {
-
+    static navigationOptions = {
+        headerTitle:'首页', //
+    };
     render() {
-        return (
-            <TouchableOpacity onPress={()=>alert('0000')} style={{flex: 1}}>
-                <Text>Hi! My name is Home </Text>
-                <Button title='pushLogin'/>
-                <ButtonClick onppp={() => this.props.navigation.push('Login')}/>
-            </TouchableOpacity>
+        let data = this.props.state.params;//获取上个页面传值
+            return (
+            <View>
+            <Text>Hi! My name is Home </Text>
+           </View>
         )
+    }
+
+    pushLogin =()=>{
+        this.props.navigation.push('Login')
     }
 }
 const ButtonClick = (pp) => {

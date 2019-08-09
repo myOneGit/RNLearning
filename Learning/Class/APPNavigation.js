@@ -9,15 +9,13 @@ import Login from './Login';
 import Home from './Home';
 
 const AppNavigator = createStackNavigator({
-    Login: {
-        screen: Login,
-    },
-    Home:{
-       screen:Home
-    },
+
+    Login: Login,
+    Home:Home,
 
 }, {
-    initialRouteName: 'Home',
+    initialRouteName: 'Login',
+
 });
 
 export default createAppContainer(AppNavigator);
