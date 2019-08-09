@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image,Alert,StyleSheet,TextInput,Button} from 'react-native';
+import { View, Text, Image,Alert,StyleSheet,TextInput,Button,TouchableOpacity} from 'react-native';
 
 export default class Login extends Component <Props> {
 
@@ -7,9 +7,13 @@ export default class Login extends Component <Props> {
         header:null, //隐藏导航栏
     };
 
+
+
+
     TextInputDIY = (leftText, placeholderStr)=>{
 
         return(
+
             <View style={{marginHorizontal:16,height:46,justifyContent:'center'}}>
 
                 <View style={styles.inputItem}>
@@ -19,7 +23,10 @@ export default class Login extends Component <Props> {
 
                     <TextInput
                         placeholder={placeholderStr} style={styles.itemRight}
-                        
+                        onChangeText={(text)=>{
+                           alert(text)
+                        }}
+
                 />
                 </View>
 
@@ -62,6 +69,14 @@ export default class Login extends Component <Props> {
 
                 {this.TextInputDIY('验证码','请输入验证码')}
                 {this.Lin()}
+
+                <TouchableOpacity
+                    style={{backgroundColor:'#575CF1',height:40,marginHorizontal:16,marginTop:20}}
+                    onPress={()=>{
+                        this.props.navigation.push('Home',{dataText:233});
+                    }}
+                    title='登入'
+                />
 
 
             </View>

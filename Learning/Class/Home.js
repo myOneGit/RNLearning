@@ -6,10 +6,12 @@ export default class Home extends Component <Props> {
         headerTitle:'首页', //
     };
     render() {
-        let data = this.props.state.params;//获取上个页面传值
+
+        let hhh = this.props.navigation.state.params.dataText;//获取上个页面传值
+        alert('上一个传过来的：'+hhh); //字符串拼接 a+b = ab
             return (
             <View>
-            <Text>Hi! My name is Home </Text>
+            <Text>{hhh} </Text>
            </View>
         )
     }
